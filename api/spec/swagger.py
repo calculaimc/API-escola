@@ -1,7 +1,7 @@
 SWAGGER_TEMPLATE = {
     "swagger": "2.0",
     "info": {
-        "title": "Portal Sienge Bcr",
+        "title": "API Escola",
         "description": "Endpoints API",
     },
     "components": {
