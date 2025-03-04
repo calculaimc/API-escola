@@ -31,7 +31,7 @@ class ProfessoresController():
         if DatabaseManager().select_one(f'SELECT * FROM professores WHERE id = {id}') is None:
             return {
                 "resultado": 'error',
-                "motivo": 'professor não encontrado para deletar',
+                "motivo": 'professor não encontrado para atualizar',
                 "status_code": 404
             }
 

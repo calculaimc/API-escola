@@ -47,7 +47,7 @@ get_aluno_by_id_doc = {
         {
             "name": "id",
             "in": "path",
-            "description": "ID do usuário",
+            "description": "ID do aluno",
             "required": True,
             "schema": {
                 "type": "string"
@@ -170,7 +170,7 @@ delete_aluno_by_id_doc = {
         {
             "name": "id",
             "in": "path",
-            "description": "ID do usuário",
+            "description": "ID do aluno",
             "required": True,
             "schema": {
                 "type": "string"
@@ -271,6 +271,18 @@ update_aluno_by_id = {
       "examples": {
         "application/json": {
           "error": "aluno não encontrado para atualizar"
+        }
+      }
+    },
+    "400": {
+      "description": "Caso não passe pela validação dos dados",
+      "examples": {
+          "application/json": {
+              "details": {
+                  "data_nascimento": "Field required"
+              },
+              "error": "VALIDATION_ERROR",
+              "msg": "Dados inválidos!"
         }
       }
     }
