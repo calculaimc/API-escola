@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 
-class CreateAlunoPayload(BaseModel):
+class AlunoPayload(BaseModel):
     nome: str = Field(..., max_length=100)
     idade: int
     turma_id: int

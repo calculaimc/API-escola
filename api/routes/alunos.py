@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from api.controllers.alunos import AlunosController
-from api.models.alunos import CreateAlunoPayload
+from api.models.alunos import AlunoPayload
 from flasgger import swag_from
 from api.spec.alunos import (
     create_aluno_doc,
@@ -37,7 +37,7 @@ def get_aluno(id):
 def create_aluno():
     novo_aluno = request.get_json()
 
-    CreateAlunoPayload(**novo_aluno)
+    AlunoPayload(**novo_aluno)
 
     if not AlunosController().create_aluno(novo_aluno):
         return jsonify(error='id da turma não existe'), 404
@@ -58,7 +58,7 @@ def delete_aluno(id):
 def update_aluno(id):
     aluno_atualizado = request.get_json()
 
-    CreateAlunoPayload(**aluno_atualizado)
+    AlunoPayload(**aluno_atualizado)
     
     if not AlunosController().update_aluno(aluno_atualizado, id):
         return jsonify(error='aluno não encontrado para atualizar'), 404
